@@ -1,34 +1,31 @@
 #container {
     position: absolute;
     text-align: center;
-    margin: 1% 50px 1% 50px;
-    width: 500px;
-    height: 500px;
+    width: 90%;
+    height: 600px;
     border: 10px solid olive;
+    font-size: 1.5rem;
 }
+
 #start {
     background-color: indigo;
     padding: 5px 20px;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
 }
+
 #quizDiv {
     margin: 50px;
 }
 
 #timer {
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: bold;
-}
-
-#scores {
-    text-align: center;
-    padding: 10px;
 }
 
 li {
     background-color: indigo;
     margin: 5px 0 0 -40px;
-    font-size: 15px;
+    font-size: 20px;
     color: white;
 }
