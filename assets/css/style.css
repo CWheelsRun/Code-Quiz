@@ -1,22 +1,34 @@
 #container {
     position: absolute;
-    left: 30%;
-    top: 20%;
+    text-align: center;
+    margin: 1% 50px 1% 50px;
     width: 500px;
     height: 500px;
-    border: 1px solid purple;
+    border: 10px solid olive;
 }
-#startTime {
-    background-color: purple;
-    margin-left: 33%;
-    padding: 15px 32px;
-    font-size: 20px;
+#start {
+    background-color: indigo;
+    padding: 5px 20px;
+    font-size: 18px;
     color: white;
 }
-#questionsDiv {
-    margin: 20px;
+#quizDiv {
+    margin: 50px;
 }
 
-#currentTime {
-    float: right;
+#timer {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#scores {
+    text-align: center;
+    padding: 10px;
+}
+
+li {
+    background-color: indigo;
+    margin: 5px 0 0 -40px;
+    font-size: 15px;
+    color: white;
 }
