@@ -64,6 +64,7 @@ startTime.addEventListener("click", function () {
     render(questionIndex);
 });
 
+// Creating the cycle for the quiz array
 function render(questionIndex) {
     // Clear any existing data 
     quizDiv.innerHTML = "";
@@ -83,4 +84,37 @@ function render(questionIndex) {
         listCreate.appendChild(listItem);
         listItem.addEventListener("click", (compare));
     })
+}
+
+// Comparing submitted choices with answer of each question
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches("li")) {
+
+        var response = document.createElement("div");
+        response.setAttribute("id", "response");
+        // Correct response
+        if (element.textContent == questions[questionIndex].answer) {
+            score++;
+            response.textContent = "Correct!";
+        } else {
+            // Wrong response, includes 10 second reduction
+            secondsLeft = secondsLeft - penalty;
+            response.textContent = "Wrong!";
+        }
+
+    }
+    // Index cycle to move on to next question
+    questionIndex++;
+
+    // Completed quiz variation
+    if (questionIndex >= questions.length) {
+        complete();
+        response.textContent = "End of quiz!" + " " + "You got  " + score + "/" + questions.length + " Correct!";
+    } else {
+        render(questionIndex);
+    }
+    quizDiv.appendChild(response);
+
 }
