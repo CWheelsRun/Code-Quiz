@@ -44,7 +44,7 @@ var interval = 0;
 // Represents penalty time for wrong answers
 var penalty = 10;
 // Creates list
-var ulCreate = document.createElement("ul");
+var listCreate = document.createElement("ul");
 
 // Timer starts when user clicks, timer is then displayed on screen
 startTime.addEventListener("click", function () {
@@ -64,3 +64,23 @@ startTime.addEventListener("click", function () {
     render(questionIndex);
 });
 
+function render(questionIndex) {
+    // Clear any existing data 
+    quizDiv.innerHTML = "";
+    listCreate.innerHTML = "";
+    // Cycle through all quesions in the array
+    for (var i = 0; i < questions.length; i++) {
+        // Appends question title, leaves choices to proper function
+        var currentQuestion = questions[questionIndex].title;
+        var currentChoices = questions[questionIndex].choices;
+        quizDiv.textContent = currentQuestion;
+    }
+    // Displays choices per question
+    currentChoices.forEach(function (newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem;
+        quizDiv.appendChild(listCreate);
+        listCreate.appendChild(listItem);
+        listItem.addEventListener("click", (compare));
+    })
+}
